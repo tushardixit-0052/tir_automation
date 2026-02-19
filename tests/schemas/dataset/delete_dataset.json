@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Delete Confirmation Schema",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer",
+      "const": 200
+    },
+    "message": {
+      "type": "string",
+      "const": "Success"
+    },
+    "errors": {
+      "type": "object"
+    },
+    "data": {
+      "type": "string",
+      "const": "DISK deleted successfully"
+    }
+  },
+  "required": ["code", "data", "message", "errors"]
+}

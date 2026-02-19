@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["code", "data"],
+    "properties": {
+      "code": { "type": "integer" },
+      "data": {
+        "type": "object",
+        "required": ["INDIAAI", "CPU", "GPU"],
+        "properties": {
+          "INDIAAI": { "type": "array" },
+          "CPU": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/skuItem" }
+          },
+          "GPU": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/skuItem" }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "skuItem": {
+        "type": "object",
+        "required": ["sku_id", "name", "series", "cpu", "plans", "is_inventory_available"],
+        "properties": {
+          "sku_id": { "type": "integer" },
+          "name": { "type": "string" },
+          "series": { "type": "string" },
+          "cpu": { "type": "string" },
+          "gpu": { "type": ["string", "null"] },
+          "memory": { "type": "string" },
+          "gpu_memory": { "type": "string" },
+          "sku_type": { "type": "string" },
+          "is_free": { "type": "boolean" },
+          "is_active": { "type": "boolean" },
+          "plans": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/plan" }
+          },
+          "gpu_switch_type": { "type": ["string", "null"] },
+          "gpu_card_type": { "type": ["string", "null"] },
+          "local_storage_in_gb": { "type": "integer" },
+          "available_inventory_count": { "type": "integer" },
+          "variant": { "type": "string" },
+          "category": { "type": "string" },
+          "no_of_nodes": { "type": "integer" },
+          "is_inventory_available": { "type": "boolean" }
+        }
+      },
+      "plan": {
+        "type": "object",
+        "required": ["sku_item_price_id", "sku_type", "unit_price", "currency"],
+        "properties": {
+          "sku_item_price_id": { "type": "integer" },
+          "sku_type": { "type": "string" },
+          "committed_days": { "type": "integer" },
+          "unit_price": { "type": "number" },
+          "currency": { "type": "string" },
+          "is_active": { "type": "boolean" },
+          "description": { "type": ["string", "null"] },
+          "location": { "type": "string" }
+        }
+      }
+    }
+  }

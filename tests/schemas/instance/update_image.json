@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "required": ["code", "data", "errors", "message"],
+    "properties": {
+      "code": {
+        "type": "integer",
+        "enum": [200]
+      },
+      "data": {
+        "type": "object",
+        "required": ["image_type", "e2e_registry_image_url"],
+        "properties": {
+          "image_type": {
+            "type": "string",
+            "enum": ["pre-built"]
+          },
+          "e2e_registry_image_url": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "errors": {
+        "type": "object"
+      },
+      "message": {
+        "type": "string",
+        "enum": ["Success"]
+      }
+    }
+  }
+  

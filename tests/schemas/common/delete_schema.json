@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Delete Confirmation Schema",
+    "type": "object",
+    "properties": {
+      "code": {
+        "type": "integer",
+        "const": 200
+      },
+      "message": {
+        "type": "string"
+      },
+      "data": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "errors": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "required": [
+      "code",
+      "data",
+      "errors",
+      "message"
+    ]
+  }

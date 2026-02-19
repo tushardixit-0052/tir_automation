@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "code": { "type": "integer", "const": 200 },
+    "message": { "type": "string" },
+    "errors": { "type": "object" },
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "name": { "type": "string" },
+        "project_id": { "type": "integer" },
+        "image_type": { "type": "string" },
+        "status": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" },
+        "last_activity": { "type": ["string", "null"] },
+
+        "committed_info": {
+          "type": ["object", "null"],
+          "properties": {
+            "end_date": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "next_sku_item_price": {
+              "type": ["integer", "null"]
+            },
+            "resource_state": {
+              "type": "string"
+            },
+            "updation_policy": {
+              "type": "string"
+            }
+          },
+          "required": ["end_date", "resource_state", "updation_policy"]
+        },
+
+        "image_details": {
+          "type": "object",
+          "properties": {
+            "image_id": { "type": "integer" },
+            "version_id": { "type": "integer" },
+            "name": { "type": "string" }
+          }
+        },
+
+        "sku_details": {
+          "type": "object",
+          "properties": {
+            "specs": {
+              "type": "object",
+              "properties": {
+                "sku_id": { "type": "integer" },
+                "cpu": { "type": "integer" },
+                "gpu": { "type": "integer" },
+                "memory": { "type": "integer" },
+                "is_active": { "type": "boolean" }
+              }
+            },
+            "plan": {
+              "type": "object",
+              "properties": {
+                "unit_price": { "type": "number" },
+                "currency": { "type": "string" },
+                "location": { "type": "string" }
+              }
+            }
+          }
+        },
+
+        "created_by": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "integer" },
+            "email": { "type": "string", "format": "email" }
+          }
+        },
+
+        "app": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "integer" },
+            "name": { "type": "string" },
+            "display_name": { "type": "string" }
+          }
+        },
+
+        "ssh_keys": { "type": "array" },
+        "custom_ports": { "type": "array" },
+        "vpc_ips": { "type": ["array", "null"] }
+      },
+      "required": ["id", "name", "status", "sku_details", "created_at"]
+    }
+  },
+  "required": ["code", "data", "message"]
+}

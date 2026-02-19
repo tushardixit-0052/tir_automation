@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+      "code": {
+        "type": "integer",
+        "example": 200
+      },
+      "data": {
+        "type": "string",
+        "example": "Security group addition successful"
+      },
+      "errors": {
+        "type": "object",
+        "additionalProperties": true,
+        "example": {}
+      },
+      "message": {
+        "type": "string",
+        "example": "Success"
+      }
+    },
+    "required": ["code", "data", "errors", "message"]
+  }
+  

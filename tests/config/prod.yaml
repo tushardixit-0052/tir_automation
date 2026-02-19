@@ -1,0 +1,8 @@
+base_url: "https://api.e2enetworks.com/myaccount/api/v1/gpu/"
+timeout: 30
+
+auth:
+  bearer_token: "${BEARER_TOKEN}"
+  api_key: "${API_KEY}"
+  project_id: "${PROJECT_ID}"
+  team_id: "${TEAM_ID}"

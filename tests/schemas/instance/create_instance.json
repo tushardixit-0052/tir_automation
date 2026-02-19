@@ -1,0 +1,49 @@
+{
+    "type": "object",
+    "properties": {
+        "code": {"type": "integer"},
+        "message": {"type": "string"},
+        "data": {
+            "type": "object",
+            "properties": {
+                "id": {"type": "integer"},
+                "name": {"type": "string"},
+                "project_id": {"type": "integer"},
+                "image_type": {"type": "string"},
+                "status": {"type": "string"},
+                "created_at": {"type": "string", "format": "date-time"},
+                "disk_size_in_gb": {"type": "integer"},
+                "sku_details": {
+                    "type": "object",
+                    "properties": {
+                        "specs": {
+                            "type": "object",
+                            "properties": {
+                                "sku_id": {"type": "integer"},
+                                "cpu": {"type": "integer"},
+                                "gpu": {"type": "integer"},
+                                "is_active": {"type": "boolean"}
+                            }
+                        },
+                        "plan": {
+                            "type": "object",
+                            "properties": {
+                                "unit_price": {"type": "number"},
+                                "currency": {"type": "string"}
+                            }
+                        }
+                    }
+                },
+                "created_by": {
+                    "type": "object",
+                    "properties": {
+                        "email": {"type": "string", "format": "email"}
+                    }
+                }
+            },
+            "required": ["id", "name", "status", "sku_details"]
+        },
+        "errors": {"type": "object"}
+    },
+    "required": ["code", "data", "message"]
+}

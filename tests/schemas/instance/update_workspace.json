@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "code": { "type": "integer", "const": 200 },
+      "message": { "type": "string" },
+      "errors": { "type": "object" },
+      "data": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "name": { "type": "string" },
+          "status": { "type": "string", "enum": ["waiting", "ready", "stopped", "stopping"] },
+          "image_details": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "version": { "type": "string" }
+            }
+          },
+          "sku_details": {
+            "type": "object",
+            "properties": {
+              "specs": {
+                "type": "object",
+                "properties": {
+                  "cpu": { "type": "integer" },
+                  "gpu": { "type": "integer" },
+                  "gpu_card_type": { "type": "string" }
+                }
+              },
+              "plan": {
+                "type": "object",
+                "properties": {
+                  "unit_price": { "type": "number" },
+                  "currency": { "type": "string" }
+                }
+              }
+            }
+          },
+          "app_url": { "type": "string", "format": "uri" },
+          "disk_size_in_gb": { "type": "integer", "minimum": 1 },
+          "created_at": { "type": "string", "format": "date-time" }
+        },
+        "required": ["id", "name", "status", "sku_details", "disk_size_in_gb"]
+      }
+    },
+    "required": ["code", "data", "message"]
+  }

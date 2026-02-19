@@ -1,0 +1,113 @@
+{
+  "type": "object",
+  "required": [
+    "code",
+    "data"
+  ],
+  "properties": {
+    "code": {
+      "type": "integer",
+      "enum": [
+        200
+      ]
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "image_id",
+          "name",
+          "slug_name",
+          "versions"
+        ],
+        "properties": {
+          "image_id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "slug_name": {
+            "type": "string"
+          },
+          "icon_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "versions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "image_version_id",
+                "version",
+                "gpu_image_url",
+                "app"
+              ],
+              "properties": {
+                "image_version_id": {
+                  "type": "integer"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "cpu_image_url": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "gpu_image_url": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "description": {
+                  "type": "string"
+                },
+                "is_internal": {
+                  "type": "boolean"
+                },
+                "app": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "name",
+                    "is_ssh_required"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "app_url": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "is_ssh_required": {
+                      "type": "boolean"
+                    },
+                    "display_name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

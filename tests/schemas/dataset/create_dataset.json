@@ -1,0 +1,76 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "code": {
+        "type": "integer",
+        "const": 201
+      },
+      "message": {
+        "type": "string"
+      },
+      "errors": {
+        "type": "object"
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "name": { "type": "string" },
+          "project_id": { "type": "integer" },
+          "description": { "type": ["string", "null"] },
+          "storage_type": { "type": "string" },
+  
+          "pvc": {
+            "type": ["object", "null"],
+            "properties": {
+              "id": { "type": "integer" },
+              "disk_size": { "type": "integer" },
+              "pvc_type": { "type": "string" },
+              "status": { "type": "string" },
+              "status_log": { "type": ["string", "null"] },
+              "created_at": { "type": "string", "format": "date-time" },
+              "updated_at": { "type": "string", "format": "date-time" }
+            },
+            "required": ["id", "disk_size", "pvc_type", "status", "created_at", "updated_at"]
+          },
+  
+          "bucket": { "type": ["object", "null"] },
+          "access_key": { "type": ["string", "null"] },
+          "encryption_type": { "type": ["string", "null"] },
+          "encryption_enable": { "type": "boolean" },
+  
+          "status": { "type": "string" },
+  
+          "created_by": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "integer" },
+              "name": { "type": "string" },
+              "email": { "type": "string", "format": "email" },
+              "username": { "type": "string" }
+            },
+            "required": ["id", "name", "email", "username"]
+          },
+  
+          "created_at": { "type": "string", "format": "date-time" },
+          "updated_at": { "type": "string", "format": "date-time" },
+          "pfs": { "type": ["object", "null"] },
+          "location": { "type": "string" }
+        },
+        "required": [
+          "id",
+          "name",
+          "project_id",
+          "storage_type",
+          "status",
+          "created_by",
+          "created_at",
+          "updated_at",
+          "location"
+        ]
+      }
+    },
+    "required": ["code", "data", "message"]
+  }
+  
