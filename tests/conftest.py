@@ -21,10 +21,9 @@ def pytest_sessionstart():
         raise RuntimeError("ENV not set. Use ENV=prod|groot|loki")
 
     env_file = Path(f"env/{env}.env")
-    if not env_file.exists():
-        raise RuntimeError(f"{env}.env not found")
-
-    load_dotenv(env_file)
+    if env_file.exists():
+        load_dotenv(env_file)
+    # else: env vars expected to be pre-set (Docker -e flags, CI variables, etc.)
 
 
 @pytest.fixture(scope="session")
