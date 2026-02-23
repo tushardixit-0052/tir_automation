@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SFS 412 Precondition Failed (string error)",
+  "description": "Used when the API returns a 412 with a plain string error message instead of a field-level object.",
+  "type": "object",
+  "required": [
+    "code",
+    "data",
+    "errors",
+    "message"
+  ],
+  "properties": {
+    "code": {
+      "type": "integer",
+      "const": 412
+    },
+    "message": {
+      "type": "string",
+      "const": "Precondition Failed"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "errors": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

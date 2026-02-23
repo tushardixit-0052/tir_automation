@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "required": ["code", "data", "errors", "message"],
+  "properties": {
+    "code": {
+      "type": "integer",
+      "enum": [200]
+    },
+    "message": {
+      "type": "string"
+    },
+    "errors": {
+      "type": "object"
+    },
+    "total_page_number": {
+      "type": "integer"
+    },
+    "total_count": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "status", "is_mounted"],
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "is_mounted": {
+            "type": "boolean"
+          },
+          "sfs_path": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    }
+  }
+}

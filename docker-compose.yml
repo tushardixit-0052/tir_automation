@@ -1,0 +1,8 @@
+services:
+  tir-tests:
+    build: .
+    environment:
+      - ENV=${ENV:-prod}
+    volumes:
+      - ./env:/app/env:ro          # mounts local env/ dir (with prod.env inside)
+      - ./allure-results:/app/allure-results

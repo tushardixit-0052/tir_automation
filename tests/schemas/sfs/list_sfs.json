@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "required": ["code", "data", "errors", "message"],
+  "properties": {
+    "code": {
+      "type": "integer",
+      "enum": [200]
+    },
+    "message": {
+      "type": "string"
+    },
+    "errors": {
+      "type": "object"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "created_by", "sfs_ip", "created_at", "disk_size", "size_in_gb", "location"],
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "created_by": {
+            "type": "integer"
+          },
+          "sfs_ip": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "disk_size": {
+            "type": "string"
+          },
+          "size_in_gb": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
