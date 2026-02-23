@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "required": ["code", "data", "errors", "message"],
+  "properties": {
+    "code": {
+      "type": "integer",
+      "enum": [412]
+    },
+    "data": {
+      "type": "object",
+      "maxProperties": 0
+    },
+    "errors": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "message": {
+      "type": "string",
+      "enum": ["Precondition Failed"]
+    }
+  }
+}

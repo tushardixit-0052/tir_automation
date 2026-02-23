@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "required": ["code", "data", "errors", "message"],
+  "properties": {
+    "code": {
+      "type": "integer",
+      "enum": [404]
+    },
+    "data": {
+      "type": "object",
+      "maxProperties": 0
+    },
+    "errors": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}

@@ -21,9 +21,11 @@ DATASET_ENDPOINTS = {
     "dataset_id_path": "/teams/{team_id}/projects/{project_id}/datasets/{dataset_id}/",
 }
 
-SFS_ENDPIONTS = {
+SFS_ENDPOINTS = {
     "create_sfs": "/teams/{team_id}/projects/{project_id}/distributed_jobs/sfs/",
+    "list_sfs": "/teams/{team_id}/projects/{project_id}/distributed_jobs/sfs/",
     "sfs_id_path": "/teams/{team_id}/projects/{project_id}/distributed_jobs/sfs/{sfs_id}/",
+    "list_attached_notebooks": "/teams/{team_id}/projects/{project_id}/distributed_jobs/sfs/{sfs_id}/notebooks/",
 }
 
 PFS_ENDPOINTS = {}
