@@ -42,3 +42,26 @@ RESERVE_IP_ENDPOINTS = {
     "create_reserved_ip": "/teams/{team_id}/projects/{project_id}/reserved_ips/",  # POST
     "reserved_ip_id_path": "/teams/{team_id}/projects/{project_id}/reserved_ips/{reserved_ip_id}/",  
 }
+
+TRAINING_CLUSTER_BASE = "/teams/{team_id}/projects/{project_id}/distributed_jobs"
+
+TRAINING_CLUSTER_ENDPOINTS = {
+    # Cluster Plans
+    "list_cluster_plans":    f"{TRAINING_CLUSTER_BASE}/cluster/plans/",          # GET
+
+    # Cluster Management
+    "create_cluster":        f"{TRAINING_CLUSTER_BASE}/cluster/",                # POST
+    "list_clusters":         f"{TRAINING_CLUSTER_BASE}/cluster/",                # GET
+    "cluster_detail":        f"{TRAINING_CLUSTER_BASE}/cluster/{{cluster_id}}/", # GET
+    "delete_cluster":        f"{TRAINING_CLUSTER_BASE}/cluster/{{cluster_id}}/", # DELETE
+
+    # Training Images
+    "list_training_images":  f"{TRAINING_CLUSTER_BASE}/images/",                 # GET
+
+    # Job Management
+    "create_job":            f"{TRAINING_CLUSTER_BASE}/jobs/",                   # POST
+    "list_jobs":             f"{TRAINING_CLUSTER_BASE}/jobs/",                   # GET
+    "job_detail":            f"{TRAINING_CLUSTER_BASE}/jobs/{{job_id}}/",        # GET
+    "delete_job":            f"{TRAINING_CLUSTER_BASE}/jobs/{{job_id}}/",        # DELETE
+    "terminate_job":         f"{TRAINING_CLUSTER_BASE}/jobs/{{job_id}}/",        # PUT
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["code", "data", "message"],
+  "properties": {
+    "code": { "type": "integer" },
+    "message": { "type": "string" },
+    "errors": { "type": "object" },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "integer" },
+          "name": { "type": "string" },
+          "cpu": { "type": "integer" },
+          "gpu": { "type": "integer" },
+          "memory": { "type": "integer" },
+          "price": { "type": "number" },
+          "location": { "type": "string" }
+        }
+      }
+    }
+  }
+}

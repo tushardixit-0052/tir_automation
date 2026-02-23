@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["code", "data", "message"],
+  "properties": {
+    "code": { "type": "integer", "const": 200 },
+    "message": { "type": "string" },
+    "errors": { "type": "object" },
+    "data": {
+      "type": "object",
+      "required": ["id", "name", "status"],
+      "properties": {
+        "id": { "type": "integer" },
+        "name": { "type": "string" },
+        "status": { "type": "string" },
+        "node_count": { "type": "integer" },
+        "plan_id": { "type": "integer" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": ["string", "null"] },
+        "created_by": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "integer" },
+            "email": { "type": "string", "format": "email" }
+          }
+        }
+      }
+    }
+  }
+}
