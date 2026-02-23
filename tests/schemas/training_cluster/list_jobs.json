@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["code", "data", "message"],
+  "properties": {
+    "code": { "type": "integer" },
+    "message": { "type": "string" },
+    "errors": { "type": "object" },
+    "data": {
+      "type": ["array", "object"]
+    }
+  }
+}

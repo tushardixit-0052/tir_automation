@@ -7,6 +7,7 @@ from fixtures.dataset import dataset
 from fixtures.sfs import sfs
 # from fixtures.pfs import pfs
 from fixtures.reserveip import reserved_ip
+from fixtures.training_cluster import training_cluster, training_job
 
 logger = logging.getLogger(__name__)
 

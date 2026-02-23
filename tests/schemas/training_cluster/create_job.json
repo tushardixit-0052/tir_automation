@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["code", "data", "message"],
+  "properties": {
+    "code": { "type": "integer" },
+    "message": { "type": "string" },
+    "errors": { "type": "object" },
+    "data": {
+      "type": "object",
+      "required": ["id", "name", "status"],
+      "properties": {
+        "id": { "type": "integer" },
+        "name": { "type": "string" },
+        "status": { "type": "string" },
+        "cluster_id": { "type": "integer" },
+        "image_url": { "type": "string" },
+        "framework": { "type": "string" },
+        "num_workers": { "type": "integer" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "created_by": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "integer" },
+            "email": { "type": "string", "format": "email" }
+          }
+        }
+      }
+    }
+  }
+}

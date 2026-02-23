@@ -3,3 +3,7 @@ __pycache__/
 .pytest_cache/
 .allure-results/
 .env
+.claude/*
+claude.md
+env/*.env
+!env/example.env
